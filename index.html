@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b14">
+  <title>NEON RUN // TITI Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">N</span><span>NEON<span class="muted">/</span>RUN</span></div>
+      <div class="top-status"><span class="live-dot"></span> ARCADE SYSTEM ONLINE</div>
+      <button id="soundBtn" class="icon-btn" aria-label="صدا">♪ <span id="soundLabel">SOUND OFF</span></button>
+    </header>
+
+    <section id="menuScreen" class="screen menu-screen">
+      <div class="eyebrow"><span class="line"></span> ENDLESS ARCADE CHALLENGE <span class="line"></span></div>
+      <h1 class="hero-title">NEON<br><span>RUNNER</span></h1>
+      <p class="hero-sub">DODGE. COLLECT. SURVIVE.</p>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="city city-back"></div><div class="city city-front"></div>
+        <div class="road"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="runner-preview patrick-preview"><b></b><i></i><em></em></div>
+      </div>
+      <div class="menu-bottom">
+        <div class="game-stats"><div><small>MODE</small><strong>SOLO / RUN</strong></div><div><small>DIFFICULTY</small><strong class="cyan">RISING</strong></div><div><small>RECORD</small><strong id="recordText">0000</strong></div></div>
+        <button id="startBtn" class="primary-btn"><span>START GAME</span><b>↗</b></button>
+        <p class="hint">PRESS START OR TAP THE SCREEN TO PLAY</p>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <div class="hud">
+        <div><small>SCORE</small><strong id="score">0000</strong></div>
+        <div class="hud-center"><span class="live-dot"></span> RUN IN PROGRESS</div>
+        <div class="hud-right"><small>BEST</small><strong id="best">0000</strong></div>
+      </div>
+      <div id="gameArea" class="game-area" tabindex="0" aria-label="بازی؛ برای حرکت چپ و راست بزن">
+        <div class="game-grid"></div><div class="game-horizon"></div>
+        <div class="lane lane1"></div><div class="lane lane2"></div>
+        <div id="collectLayer"></div><div id="obstacleLayer"></div>
+        <div id="player" class="player patrick" aria-label="Patrick Star"><div class="player-glow"></div><div class="patrick-arm arm-left"></div><div class="patrick-arm arm-right"></div><div class="patrick-body"><div class="patrick-eyes"><i></i><i></i></div><div class="patrick-brows"></div><div class="patrick-cheek cheek-left"></div><div class="patrick-cheek cheek-right"></div><div class="patrick-mouth"><i></i></div><div class="patrick-shorts"><i></i><b></b></div></div><div class="patrick-leg leg-left"></div><div class="patrick-leg leg-right"></div><div class="player-trail"></div></div>
+        <div id="countdown" class="countdown">3</div>
+        <div id="pauseOverlay" class="pause-overlay hidden"><div class="pause-card"><span class="eyebrow">SYSTEM PAUSED</span><h2>TAKE A BREATHER</h2><button id="resumeBtn" class="primary-btn">RESUME <b>▶</b></button></div></div>
+      </div>
+      <div class="game-controls"><span>← / A</span><span class="control-label">MOVE</span><span>D / →</span><button id="pauseBtn" class="small-btn">Ⅱ PAUSE</button></div>
+      <p class="mobile-hint">برای حرکت، سمت چپ یا راست صفحه را لمس کن</p>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen hidden">
+      <div class="result-kicker" id="resultKicker">ARCADE SESSION COMPLETE</div>
+      <div class="result-icon" id="resultIcon">✦</div>
+      <h2 id="resultTitle">YOU WIN</h2>
+      <p id="resultText">Reach 2000 points to unlock the secret message.</p>
+      <div class="result-score"><small>FINAL SCORE</small><strong id="finalScore">0000</strong></div>
+      <div class="result-actions"><button id="againBtn" class="primary-btn">PLAY AGAIN <b>↻</b></button></div><p class="hint">FINAL TRANSMISSION UNLOCKS AUTOMATICALLY</p>
+    </section>
+
+    <section id="secretScreen" class="screen secret-screen hidden">
+      <canvas id="heartCanvas"></canvas>
+      <div class="secret-vignette"></div>
+      <div class="secret-content">
+        <div class="secret-label">LEVEL COMPLETE // UNLOCKED MESSAGE</div>
+        <p class="secret-intro" id="secretIntro">You found the hidden ending.</p>
+        <div class="heart-frame"><div class="heart-shape">♥</div><div class="heart-text">I LOVE TITI</div></div>
+        <h2 class="secret-title">YOU ARE MY<br><span>FAVORITE PERSON.</span></h2>
+        <p class="secret-message">بین تمام اتفاق‌های غیرمنتظره‌ی دنیا،<br>تو قشنگ‌ترین چیزی هستی که برای من اتفاق افتاده.</p>
+        <div class="secret-signature">— JUST FOR YOU <span>♥</span></div>
+        <button id="replayBtn" class="secondary-btn replay">REPLAY THE GAME <b>↻</b></button>
+      </div>
+    </section>
+
+    <footer class="footer"><span>© NEON RUN SYSTEMS</span><span>BUILD 01.07 <i>●</i> ALL SYSTEMS NOMINAL</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
